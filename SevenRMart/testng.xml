@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="listenersforextentreport.Listeners"></listener>
+	</listeners>
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="com.obsqura.SevenRMart.testscripts.DisplayAllProductsTest" />
+			<class name="com.obsqura.SevenRMart.testscripts.CreateSubCategoryTest" />
+			<class name="com.obsqura.SevenRMart.testscripts.CreateExpenseCategoryTest" />
+			<class name="com.obsqura.SevenRMart.testscripts.DisplayAllCategoriesTest" />
+			<class name="com.obsqura.SevenRMart.testscripts.ListAllDeliveryBoyTest" />
+			<class name="com.obsqura.SevenRMart.testscripts.LoginTest" />
+			<class name="com.obsqura.SevenRMart.testscripts.CreateNewsTest" />
+			<class name="com.obsqura.SevenRMart.testscripts.CreateAdminUserTest" />
+			<class name="com.obsqura.SevenRMart.testscripts.LogoutTest" />
+			<class name="com.obsqura.SevenRMart.testscripts.PushNotificationsTest" />
+			<class name="com.obsqura.SevenRMart.testscripts.DeleteAdminUserTest"/>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
