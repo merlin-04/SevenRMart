@@ -23,7 +23,7 @@ public class DeleteAdminUserPage {
 
 	@FindBy(xpath = "//div[@class='icon']//following-sibling::a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']")private WebElement manageAdminUsers;
 	@FindAll({ @FindBy(xpath = "//table[contains(@class,'table-bordered')]//following::tbody") })private List<WebElement> searchResultElements;
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/user/delete?del=6302&page_ad=1']")private WebElement deleteButton;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/user/delete?del=6303&page_ad=1']")private WebElement deleteButton;
 
 	public DeleteAdminUserPage clickOnManageAdminUsersCard() {
 		manageAdminUsers.click();
