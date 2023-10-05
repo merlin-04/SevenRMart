@@ -12,7 +12,7 @@ public class DisplayAllProductsTest extends Base {
 	public LoginPage loginpage;
 	public DisplayAllProductsPage displayallproductspage;
 
-	@Test
+	@Test(description="Verify User is able to Click on Manage Products Sidebar")
 	public void verifyUserIsAbleToClickOnManageProductInSidebarMenu() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ParallelClassTesting" parallel="classes" thread-count="2">
+	<parameter name="browser" value="chrome"></parameter>
+	<listeners>
+		<listener class-name="listenersforextentreport.Listeners"></listener>
+	</listeners>
+	<test name="Test">
+	<parameter name="signPageTextExpected" value="Sign in to start your session"></parameter>
+		<classes>
+			<class name="com.obsqura.SevenRMart.testscripts.LogoutTest">
+			</class>
+			<class name="com.obsqura.SevenRMart.testscripts.ListAllDeliveryBoyTest"></class>
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

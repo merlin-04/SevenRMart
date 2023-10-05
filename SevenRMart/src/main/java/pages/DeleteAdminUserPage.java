@@ -23,8 +23,7 @@ public class DeleteAdminUserPage {
 
 	@FindBy(xpath = "//div[@class='icon']//following-sibling::a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']")private WebElement manageAdminUsers;
 	@FindAll({ @FindBy(xpath = "//table[contains(@class,'table-bordered')]//following::tbody") })private List<WebElement> searchResultElements;
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/user/delete?del=6291&page_ad=1']")private WebElement deleteButton;
-	@FindBy(xpath = "//div[contains(@class,'alert-dismissible')]")private WebElement alertMessage;
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/user/delete?del=6302&page_ad=1']")private WebElement deleteButton;
 
 	public DeleteAdminUserPage clickOnManageAdminUsersCard() {
 		manageAdminUsers.click();
@@ -44,8 +43,15 @@ public class DeleteAdminUserPage {
 		return this;
 	}
 
-	public boolean isDisplayedAlert() {
-		boolean isDisplayedAlert = alertMessage.isDisplayed();
-		return isDisplayedAlert;
+	public boolean verifyUserIsRemovedFromTheList(String expectedUsername) {
+		boolean flag = false;
+		for (WebElement adminUsersList : searchResultElements) {
+			String getUsersList = adminUsersList.getText();
+			if (getUsersList.contains(expectedUsername)) {
+				flag = true;
+				break;
+			}
+		}
+		return flag;
 	}
 }

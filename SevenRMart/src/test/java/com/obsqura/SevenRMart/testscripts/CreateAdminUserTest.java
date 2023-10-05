@@ -12,7 +12,7 @@ public class CreateAdminUserTest extends Base {
 	public LoginPage loginpage;
 	public CreateAdminUserPage createadminuserpage;
 
-	@Test
+	@Test(description ="Verify User is able to create an Admin User")
 	public void verifyUserIsAbleToCreateAnAdminUser() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");

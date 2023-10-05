@@ -13,7 +13,7 @@ public class ListAllDeliveryBoyTest extends Base {
 	public LoginPage loginpage;
 	public ListAllDeliveryBoyPage listalldeliveryboypage;
 
-	@Test
+	@Test(description= "Verify user is able to reset Search in Delivery Boy Listing")
 	public void verifyUserIsAbleToResetTheSearchInDeliveryBoyListing()
 	{
 		String username = ExcelUtility.getString(1, 0, "LoginPage");

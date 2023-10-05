@@ -13,7 +13,7 @@ import utilities.ExcelUtility;
 public class LoginTest extends Base {
 	public LoginPage loginpage;
 
-	@Test
+	@Test(description="Verify user is able to Login with correct Username and Password",groups = {"regression"})
 	public void verifyUserIsAbleToLoginWithCorrectUserNameAndPassword() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");
@@ -23,7 +23,7 @@ public class LoginTest extends Base {
 		assertTrue(actualValue, "User is unable to Login");
 	}
 
-	@Test
+	@Test(description="Verify user is able to Login with incorrect Username and correct Password",groups = {"smoke"})
 	public void verifyUserIsUnableToLoginWithInCorrectUserNameAndCorrectPassword() {
 		String username = ExcelUtility.getString(1, 2, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");
@@ -36,7 +36,7 @@ public class LoginTest extends Base {
 		Assert.assertEquals(expectedAlertMessage, actualAlertMessage,"User is able to Login with incorrect Username and correct Password");
 	}
 
-	@Test
+	@Test(description="Verify user is able to Login with correct Username and incorrect Password",groups = {"regression","smoke"})
 	public void verifyUserIsUnableToLoginWithInCorrectPasswordAndCorrectUsername() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 3, "LoginPage");
@@ -49,7 +49,7 @@ public class LoginTest extends Base {
 		Assert.assertEquals(expectedAlertMessage, actualAlertMessage,"User is able to Login with incorrect Password and correct Username");
 	}
 
-	@Test
+	@Test(description="Verify user is able to Login with inccorrect Username and incorrect Password")
 	public void verifyUserIsUnableToLoginWithInCorrectUserNameAndPassword() {
 		String username = ExcelUtility.getString(1, 2, "LoginPage");
 		String password = ExcelUtility.getString(1, 3, "LoginPage");

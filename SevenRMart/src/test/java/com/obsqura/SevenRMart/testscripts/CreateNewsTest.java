@@ -12,7 +12,7 @@ public class CreateNewsTest extends Base{
 	public CreateNewsPage createnewspage;
 	public LoginPage loginpage;
 
-	@Test
+	@Test(description="Verify user is able to create a News")
 	public void verifyUserIsAbleToCreateANews() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");

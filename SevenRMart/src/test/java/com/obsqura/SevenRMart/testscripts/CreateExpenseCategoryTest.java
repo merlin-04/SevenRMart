@@ -12,7 +12,7 @@ public class CreateExpenseCategoryTest extends Base {
 	public LoginPage loginpage;
 	public CreateExpenseCategoryPage createexpensecategory;
 	
-	@Test
+	@Test(description="Verify User is able to create Expense Category")
 	public void verifyUserIsAbleToCreateExpenseCategory() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");

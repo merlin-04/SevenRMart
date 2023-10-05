@@ -2,6 +2,7 @@ package com.obsqura.SevenRMart.testscripts;
 
 import static org.testng.Assert.assertTrue;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pages.DisplayAllCategoriesPage;
@@ -12,11 +13,11 @@ public class DisplayAllCategoriesTest extends Base {
 	public LoginPage loginpage;
 	public DisplayAllCategoriesPage displayallcategoriespage;
 
-	@Test
-	public void verifyUserIsAbleToSearchCategoryThatIsAlreadyCreated() {
+	@Test(description="Verify User is able to search Category in Categories List")
+	@Parameters("category")
+	public void verifyUserIsAbleToSearchCategoryThatIsAlreadyCreated(String category) {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");
-		String category = ExcelUtility.getString(1, 0, "DisplayAllCategoriesPage");
 		loginpage = new LoginPage(driver);
 		loginpage.enterUsernameOnUserNameTextField(username).enterPasswordOnPasswordTextField(password).clickOnSignInButton();
 		displayallcategoriespage = new DisplayAllCategoriesPage(driver);

@@ -14,7 +14,7 @@ public class CreateSubCategoryTest extends Base {
 	public LoginPage loginpage;
 	public CreateSubCategoryPage createsubcategorypage;
 
-	@Test
+	@Test(description="Verify User is able to create Sub Category")
 	public void verifyUserIsAbleToCreateSubCategory() throws AWTException {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");
