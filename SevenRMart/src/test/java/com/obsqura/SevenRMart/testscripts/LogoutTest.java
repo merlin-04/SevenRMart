@@ -6,13 +6,14 @@ import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.LogoutPage;
+import retry.Retry;
 import utilities.ExcelUtility;
 
 public class LogoutTest extends Base {
 	public LoginPage loginpage;
 	public LogoutPage logoutpage;
 
-	@Test(description="Verify user is able to Logout")
+	@Test(retryAnalyzer = Retry.class,description="Verify user is able to Logout")
 	@Parameters("signPageTextExpected")
 	public void verifyUserIsAbleToLogout(String signPageTextExpected) {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");

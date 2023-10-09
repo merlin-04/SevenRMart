@@ -7,13 +7,14 @@ import org.testng.annotations.Test;
 
 import pages.DisplayAllCategoriesPage;
 import pages.LoginPage;
+import retry.Retry;
 import utilities.ExcelUtility;
 
 public class DisplayAllCategoriesTest extends Base {
 	public LoginPage loginpage;
 	public DisplayAllCategoriesPage displayallcategoriespage;
 
-	@Test(description="Verify User is able to search Category in Categories List")
+	@Test(retryAnalyzer = Retry.class,description="Verify User is able to search Category in Categories List")
 	@Parameters("category")
 	public void verifyUserIsAbleToSearchCategoryThatIsAlreadyCreated(String category) {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");

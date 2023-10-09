@@ -6,13 +6,14 @@ import org.testng.annotations.Test;
 
 import pages.CreateAdminUserPage;
 import pages.LoginPage;
+import retry.Retry;
 import utilities.ExcelUtility;
 
 public class CreateAdminUserTest extends Base {
 	public LoginPage loginpage;
 	public CreateAdminUserPage createadminuserpage;
 
-	@Test(description ="Verify User is able to create an Admin User")
+	@Test(retryAnalyzer = Retry.class,description ="Verify User is able to create an Admin User")
 	public void verifyUserIsAbleToCreateAnAdminUser() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");

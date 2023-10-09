@@ -9,8 +9,7 @@
 		<parameter name="signPageTextExpected" value="Sign in to start your session"></parameter>
 		<parameter name="category" value="Rambootan"></parameter>
 		<classes>
-			<class name="com.obsqura.SevenRMart.testscripts.LogoutTest"></class>
-			<class name="com.obsqura.SevenRMart.testscripts.DisplayAllCategoriesTest"></class>
+			<class name="com.obsqura.SevenRMart.testscripts.PushNotificationsTest"></class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

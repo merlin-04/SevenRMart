@@ -6,13 +6,14 @@ import org.testng.annotations.Test;
 
 import pages.CreateExpenseCategoryPage;
 import pages.LoginPage;
+import retry.Retry;
 import utilities.ExcelUtility;
 
 public class CreateExpenseCategoryTest extends Base {
 	public LoginPage loginpage;
 	public CreateExpenseCategoryPage createexpensecategory;
 	
-	@Test(description="Verify User is able to create Expense Category")
+	@Test(retryAnalyzer = Retry.class,description="Verify User is able to create Expense Category")
 	public void verifyUserIsAbleToCreateExpenseCategory() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");

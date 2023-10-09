@@ -6,13 +6,14 @@ import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.PushNotificationsPage;
+import retry.Retry;
 import utilities.ExcelUtility;
 
 public class PushNotificationsTest extends Base {
 	public LoginPage loginpage;
 	public PushNotificationsPage pushnotificationpage;
 
-	@Test(description="Verify user is able to Send Push Notifications")
+	@Test(retryAnalyzer = Retry.class,description="Verify user is able to Send Push Notifications")
 	public void verifyUserIsAbleToSendPushNotifications() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");

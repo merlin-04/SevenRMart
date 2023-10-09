@@ -3,17 +3,17 @@ package com.obsqura.SevenRMart.testscripts;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import utilities.ExcelUtility;
+import retry.Retry;
 
 public class LoginTest extends Base {
 	public LoginPage loginpage;
 
-	@Test(description="Verify user is able to Login with correct Username and Password",groups = {"regression"})
+	@Test(retryAnalyzer = Retry.class,description="Verify user is able to Login with correct Username and Password",groups = {"regression"})
 	public void verifyUserIsAbleToLoginWithCorrectUserNameAndPassword() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");
@@ -23,7 +23,7 @@ public class LoginTest extends Base {
 		assertTrue(actualValue, "User is unable to Login");
 	}
 
-	@Test(description="Verify user is able to Login with incorrect Username and correct Password",groups = {"smoke"})
+	@Test(retryAnalyzer = Retry.class,description="Verify user is able to Login with incorrect Username and correct Password",groups = {"smoke"})
 	public void verifyUserIsUnableToLoginWithInCorrectUserNameAndCorrectPassword() {
 		String username = ExcelUtility.getString(1, 2, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");
@@ -36,7 +36,7 @@ public class LoginTest extends Base {
 		Assert.assertEquals(expectedAlertMessage, actualAlertMessage,"User is able to Login with incorrect Username and correct Password");
 	}
 
-	@Test(description="Verify user is able to Login with correct Username and incorrect Password",groups = {"regression","smoke"})
+	@Test(retryAnalyzer = Retry.class,description="Verify user is able to Login with correct Username and incorrect Password",groups = {"regression","smoke"})
 	public void verifyUserIsUnableToLoginWithInCorrectPasswordAndCorrectUsername() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 3, "LoginPage");
@@ -49,10 +49,8 @@ public class LoginTest extends Base {
 		Assert.assertEquals(expectedAlertMessage, actualAlertMessage,"User is able to Login with incorrect Password and correct Username");
 	}
 
-	@Test(description="Verify user is able to Login with inccorrect Username and incorrect Password")
-	public void verifyUserIsUnableToLoginWithInCorrectUserNameAndPassword() {
-		String username = ExcelUtility.getString(1, 2, "LoginPage");
-		String password = ExcelUtility.getString(1, 3, "LoginPage");
+	@Test(retryAnalyzer = Retry.class,description="Verify user is able to Login with inccorrect Username and incorrect Password")
+	public void verifyUserIsUnableToLoginWithInCorrectUserNameAndPassword(String username,String password) {
 		String expectedAlertMessage = ExcelUtility.getString(1, 4, "LoginPage");
 		loginpage = new LoginPage(driver);
 		loginpage.enterUsernameOnUserNameTextField(username);
@@ -61,4 +59,9 @@ public class LoginTest extends Base {
 		String actualAlertMessage = loginpage.warningAlertIsPresent();
 		Assert.assertEquals(expectedAlertMessage, actualAlertMessage,"User is able to Login with incorrect Username and Password");
 	}
+	@DataProvider(name = "LoginProvider")
+	public Object[][] getDataFromTestData() {
+		return new Object[][] { { ExcelUtility.getString(1, 2, "LoginPage"), ExcelUtility.getString(1, 3, "LoginPage") },
+		};
+}
 }

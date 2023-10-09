@@ -7,13 +7,14 @@ import org.testng.annotations.Test;
 
 import pages.ListAllDeliveryBoyPage;
 import pages.LoginPage;
+import retry.Retry;
 import utilities.ExcelUtility;
 
 public class ListAllDeliveryBoyTest extends Base {
 	public LoginPage loginpage;
 	public ListAllDeliveryBoyPage listalldeliveryboypage;
 
-	@Test(description= "Verify user is able to reset Search in Delivery Boy Listing")
+	@Test(retryAnalyzer = Retry.class,description= "Verify user is able to reset Search in Delivery Boy Listing")
 	public void verifyUserIsAbleToResetTheSearchInDeliveryBoyListing()
 	{
 		String username = ExcelUtility.getString(1, 0, "LoginPage");

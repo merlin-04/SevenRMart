@@ -8,13 +8,14 @@ import org.testng.annotations.Test;
 
 import pages.CreateSubCategoryPage;
 import pages.LoginPage;
+import retry.Retry;
 import utilities.ExcelUtility;
 
 public class CreateSubCategoryTest extends Base {
 	public LoginPage loginpage;
 	public CreateSubCategoryPage createsubcategorypage;
 
-	@Test(description="Verify User is able to create Sub Category")
+	@Test(retryAnalyzer = Retry.class,description="Verify User is able to create Sub Category")
 	public void verifyUserIsAbleToCreateSubCategory() throws AWTException {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");

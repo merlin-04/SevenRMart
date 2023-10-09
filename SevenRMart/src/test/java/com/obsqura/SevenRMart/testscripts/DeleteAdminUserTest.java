@@ -7,13 +7,14 @@ import org.testng.annotations.Test;
 
 import pages.DeleteAdminUserPage;
 import pages.LoginPage;
+import retry.Retry;
 import utilities.ExcelUtility;
 
 public class DeleteAdminUserTest extends Base {
 	public LoginPage loginpage;
 	public DeleteAdminUserPage deleteadminuserpage;
 
-	@Test(description ="Verify User is able delete an Admin User")
+	@Test(retryAnalyzer = Retry.class,description ="Verify User is able delete an Admin User")
 	public void verifyUserIsAbleToDeleteAnAdminUser() {
 		String username = ExcelUtility.getString(1, 0, "LoginPage");
 		String password = ExcelUtility.getString(1, 1, "LoginPage");
