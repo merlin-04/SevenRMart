@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import utilities.PageUtility;
-import utilities.WaitUtility;
+import com.obsqura.SevenRMart.utilities.PageUtility;
+import com.obsqura.SevenRMart.utilities.WaitUtility;
 
 public class CreateAdminUserPage {
 	public WebDriver driver;

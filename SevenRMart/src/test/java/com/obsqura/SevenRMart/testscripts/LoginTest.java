@@ -6,8 +6,9 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.obsqura.SevenRMart.utilities.ExcelUtility;
+
 import pages.LoginPage;
-import utilities.ExcelUtility;
 import retry.Retry;
 
 public class LoginTest extends Base {

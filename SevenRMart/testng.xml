@@ -6,8 +6,6 @@
 		<listener class-name="listenersforextentreport.Listeners"></listener>
 	</listeners>
 	<test thread-count="5" name="Test">
-		<parameter name="signPageTextExpected" value="Sign in to start your session"></parameter>
-		<parameter name="category" value="Rambootan"></parameter>
 		<classes>
 			<class name="com.obsqura.SevenRMart.testscripts.PushNotificationsTest"></class>
 		</classes>

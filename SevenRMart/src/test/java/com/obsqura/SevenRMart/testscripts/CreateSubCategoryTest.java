@@ -6,10 +6,11 @@ import java.awt.AWTException;
 
 import org.testng.annotations.Test;
 
+import com.obsqura.SevenRMart.utilities.ExcelUtility;
+
 import pages.CreateSubCategoryPage;
 import pages.LoginPage;
 import retry.Retry;
-import utilities.ExcelUtility;
 
 public class CreateSubCategoryTest extends Base {
 	public LoginPage loginpage;

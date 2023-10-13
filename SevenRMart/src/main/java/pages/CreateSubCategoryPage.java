@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import utilities.FileUploadUtility;
-import utilities.GeneralUtility;
-import utilities.PageUtility;
-import utilities.WaitUtility;
+import com.obsqura.SevenRMart.utilities.FileUploadUtility;
+import com.obsqura.SevenRMart.utilities.GeneralUtility;
+import com.obsqura.SevenRMart.utilities.PageUtility;
+import com.obsqura.SevenRMart.utilities.WaitUtility;
 
 public class CreateSubCategoryPage {
 	public WebDriver driver;

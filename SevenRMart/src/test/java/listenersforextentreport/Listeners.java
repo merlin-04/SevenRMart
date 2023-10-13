@@ -9,8 +9,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.obsqura.SevenRMart.testscripts.Base;
+import com.obsqura.SevenRMart.utilities.ExtentReportUtility;
 
-import utilities.ExtentReportUtility;
 
 public class Listeners extends Base implements ITestListener {
 	ExtentTest test;

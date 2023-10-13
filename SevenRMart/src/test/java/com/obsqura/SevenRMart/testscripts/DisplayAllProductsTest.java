@@ -4,10 +4,11 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
+import com.obsqura.SevenRMart.utilities.ExcelUtility;
+
 import pages.DisplayAllProductsPage;
 import pages.LoginPage;
 import retry.Retry;
-import utilities.ExcelUtility;
 
 public class DisplayAllProductsTest extends Base {
 	public LoginPage loginpage;

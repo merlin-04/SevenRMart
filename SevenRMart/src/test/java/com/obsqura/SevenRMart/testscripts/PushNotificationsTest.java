@@ -4,10 +4,11 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
+import com.obsqura.SevenRMart.utilities.ExcelUtility;
+
 import pages.LoginPage;
 import pages.PushNotificationsPage;
 import retry.Retry;
-import utilities.ExcelUtility;
 
 public class PushNotificationsTest extends Base {
 	public LoginPage loginpage;

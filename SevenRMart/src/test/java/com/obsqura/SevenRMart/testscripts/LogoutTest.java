@@ -4,10 +4,11 @@ import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.obsqura.SevenRMart.utilities.ExcelUtility;
+
 import pages.LoginPage;
 import pages.LogoutPage;
 import retry.Retry;
-import utilities.ExcelUtility;
 
 public class LogoutTest extends Base {
 	public LoginPage loginpage;

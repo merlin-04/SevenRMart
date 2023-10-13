@@ -1,14 +1,14 @@
 package com.obsqura.SevenRMart.testscripts;
 
 import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
+
+import com.obsqura.SevenRMart.utilities.ExcelUtility;
 
 import pages.ListAllDeliveryBoyPage;
 import pages.LoginPage;
 import retry.Retry;
-import utilities.ExcelUtility;
 
 public class ListAllDeliveryBoyTest extends Base {
 	public LoginPage loginpage;
