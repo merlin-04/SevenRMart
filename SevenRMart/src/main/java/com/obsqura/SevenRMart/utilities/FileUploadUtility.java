@@ -1,4 +1,4 @@
-package utilities;
+package com.obsqura.SevenRMart.utilities;
 
 import java.awt.AWTException;
 import java.awt.Robot;

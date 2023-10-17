@@ -1,4 +1,4 @@
-package utilities;
+package com.obsqura.SevenRMart.utilities;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
